@@ -38,50 +38,57 @@ public class voice : MonoBehaviour
     void ActionPerformer(string command)
     {
        
-        if (command.Contains("Good"))
+        if (command.Contains("good") || command.Contains("fine") ||command.Contains("perfect")  )
         {
-            print("Child is good ");
+           // print("Child is good ");
+            sound[1].PlayDelayed(0); // 1 second = 11000
+        }
+        if (command.Contains("no") || command.Contains("nopes") || command.Contains("no idea"))
+        {
+            //print("Good Touch explaination");
+            sound[2].PlayDelayed(0);
+            
+        }
+
+       if (command.Contains("yes") || command.Contains("Yup"))
+        {
+            //print("Mood check");
+            sound[3].PlayDelayed(0);
+            anim.Play("run",-1,0);
+           
+        }  
+        if(command.Contains("thanks") || command.Contains("thank you") || command.Contains("so much"))
+        {
+            sound[4].PlayDelayed(0);
+        }
+
+    }
+
+   }
+
+
+
+   // String path = @"C:\Users\Nilesh\Desktop\Research Paper\LOG\name.txt";
+            // using (StreamWriter sr = File.AppendText(path))
+            // {
+            //     sr.WriteLine("Age sent");
+            //     sr.Close();
+            // }
+            //anim.Play("Land", -1, 0);
+
+             // String path =@"A:\HackOver\LOGS";
+            // using (StreamWriter sr = File.AppendText(path))
+            // {
+            //     sr.WriteLine("Fine");
+            //     sr.Close();
+            // }
+           // anim.Play("Jab", -1, 0);
+
             // String path = @"A:\HackOver\LOGS";
             // using (StreamWriter sr = File.AppendText(path))
             // {
             //     sr.WriteLine("Name after conversion goes here");
             //     sr.Close();
             // }
-            anim.Play("Run", -1, 0);
-            sound[1].Play(0); // 1 second = 11000
-        }
-        if (command.Contains("No"))
-        {
-            print("Good Touch explaination");
-            // String path = @"C:\Users\Nilesh\Desktop\Research Paper\LOG\name.txt";
-            // using (StreamWriter sr = File.AppendText(path))
-            // {
-            //     sr.WriteLine("Age sent");
-            //     sr.Close();
-            // }
-            anim.Play("Land", -1, 0);
-            sound[2].Play(0);
-            sound[3].Play(0);
-        }
-
-       if (command.Contains("yes"))
-        {
-            print("Mood check");
-            // String path =@"A:\HackOver\LOGS";
-            // using (StreamWriter sr = File.AppendText(path))
-            // {
-            //     sr.WriteLine("Fine");
-            //     sr.Close();
-            // }
-            anim.Play("Jab", -1, 0);
-            sound[4].Play(0);
-            sound[5].Play(0);
-        }
-
-
-       
-
-    }
-
-   }
+           // anim.Play("Run", -1, 0);
 
