@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
+using System.IO;
 
 public class voice : MonoBehaviour
 {
@@ -42,11 +43,23 @@ public class voice : MonoBehaviour
         {
            // print("Child is good ");
             sound[1].PlayDelayed(0); // 1 second = 11000
+            String path = @"A:\Unity_AR\MINI_PROJECT\MINI_PROJECT_SHIELD\Logs\data.txt";
+            using (StreamWriter sr = File.AppendText(path))
+             {
+                sr.WriteLine("Response: " + command);
+                sr.Close();
+             }
         }
         if (command.Contains("no") || command.Contains("nopes") || command.Contains("no idea"))
         {
             //print("Good Touch explaination");
             sound[2].PlayDelayed(0);
+            String path = @"A:\Unity_AR\MINI_PROJECT\MINI_PROJECT_SHIELD\Logs\data.txt";
+            using (StreamWriter sr = File.AppendText(path))
+             {
+                sr.WriteLine("Response: " + command);
+                sr.Close();
+             }
             
         }
 
@@ -55,11 +68,23 @@ public class voice : MonoBehaviour
             //print("Mood check");
             sound[3].PlayDelayed(0);
             anim.Play("run",-1,0);
+            String path = @"A:\Unity_AR\MINI_PROJECT\MINI_PROJECT_SHIELD\Logs\data.txt";
+            using (StreamWriter sr = File.AppendText(path))
+             {
+                sr.WriteLine("Response: " + command);
+                sr.Close();
+             }
            
         }  
         if(command.Contains("thanks") || command.Contains("thank you") || command.Contains("so much"))
         {
             sound[4].PlayDelayed(0);
+            String path = @"A:\Unity_AR\MINI_PROJECT\MINI_PROJECT_SHIELD\Logs\data.txt";
+            using (StreamWriter sr = File.AppendText(path))
+             {
+                sr.WriteLine("Response: " + command);
+                sr.Close();
+             }
         }
 
     }
